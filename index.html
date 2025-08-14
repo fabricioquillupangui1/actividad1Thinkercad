@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encender 7 leds usando el bucle while y for</title>
+    <style>
+        table {
+            width: 10%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #e6f7ff;
+        }
+    </style>
+</head>
+<body>
+
+<a href="index.html">visitar primer deber</a><br>
+<a href="segundoDeber.html">visitar segundo deber</a><br>
+    <a href="tercerDeber.html">visitar tercer deber</a><br>
+    <a href="actividad2Thinkercad.html">visitar Actividad 2</a><br>
+     <a href="actividad3Thinkercad.html">visitar Actividad 3</a><br>
+    <a href="actividad4Thinkercad.html">visitar Actividad 4</a>
+    <h2 align="center">ARDUINO</h2>
+
+    <h2 align="center">TÍTULO DE LA PRÁCTICA<br>
+"Encender 7 leds usando el bucle while y for"</h2>
+
+<h2>Introducción</h2>
+<p>En este proyecto se utiliza la plataforma Arduino para encender y apagar 7 LEDs mediante el uso de estructuras de control repetitivas, específicamente los bucles while y for. Estas estructuras permiten automatizar la secuencia de encendido y apagado de los LEDs de forma ordenada y eficiente, evitando la repetición manual del código para cada uno. El objetivo principal es comprender cómo emplear los bucles para recorrer un conjunto de pines y controlar varios dispositivos simultáneamente, lo cual es fundamental en el desarrollo de sistemas electrónicos más complejos y dinámicos.</p>
+<h2>OBJETIVOS</h2>
+<p>Objetivo General:<br>
+• Implementar un sistema en Arduino que permita encender y apagar 7 LEDs utilizando bucles while y for, con el fin de optimizar el control secuencial de salidas digitales.<br>
+Objetivos Específicos:<br>
+• Aplicar el bucle for para recorrer un arreglo de pines y controlar el encendido de los LEDs.
+Esto permite simplificar el código y reducir la repetición de instrucciones.<br>
+• Utilizar el bucle while como alternativa para lograr el mismo efecto con otra estructura de control.
+Así se refuerza la lógica de iteración en diferentes contextos prácticos.<br>
+• Analizar el funcionamiento de ambos bucles para comprender sus ventajas y limitaciones.
+Esto fomenta una mejor toma de decisiones al programar sistemas electrónicos.
+
+<h3>MARCO TEÓRICO</h3>
+<p><strong>Conceptos importantes</strong></p>
+<ul>
+  <li><strong>Arduino:</strong>  Plataforma de hardware libre basada en una placa con un microcontrolador, usada para crear proyectos electrónicos.   </li>
+  <li><strong>Leds:</strong>   Dispositivos emisores de luz que se encienden al recibir corriente eléctrica en una dirección específica.  </li>
+  <li><strong>Resistencias:</strong> Componentes que limitan el paso de corriente eléctrica, protegiendo otros elementos del circuito como los LEDs.  </li>
+  <li><strong>Cables de conexión:</strong>   Conductores utilizados para unir componentes electrónicos y permitir el flujo de corriente en el circuito.  </li>
+</ul>
+<img src="https://i0.wp.com/mecabot-ula.org/wp-content/uploads/practica13.png?fit=642%2C570&ssl=1" width="800">
+
+<h3>Tabla explicativa: void setup() vs void loop()</h3>
+
+      <table>
+        <tr><th>Elemento</th><th>	void setup()</th><th>	void loop()</th></tr>
+        <tr><td>Función</td><td>Se ejecuta una sola vez al iniciar el programa.</td><td>Se ejecuta de forma continua en un ciclo infinito.</td></tr>
+        <tr><td>Uso principal</td><td>Inicializar pines, comunicación serial, configuraciones.</td><td>Contiene el comportamiento principal del programa.</td></tr>
+        <tr><td>Variables usadas</td><td>Variables de configuración (ej. pines, estados iniciales).</td><td>Variables de control de flujo (ej. contadores para bucles).</td></tr>
+        <tr><td>Ejemplo típico</td><td>pinMode(9, OUTPUT);</td><td>digitalWrite(9, HIGH); delay(1000);</td></tr>
+        <tr><td>Frecuencia</td><td>Solo una vez al inicio.</td><td>Se repite constantemente mientras el Arduino esté encendido.</td></tr>
+      </table>
+
+<div class="materiales">
+        <h2>🔧 MATERIALES Y EQUIPO - Práctica de Arduino</h2>
+        <ul>
+  <li>1 Placa Arduino UNO</li>
+  <li>7 LEDs de colores</li>
+  <li>7 Resistencias de 220 ohm</li>
+  <li>1 Protoboard (placa de pruebas)</li>
+  <li>Cables de conexión tipo macho-macho</li>
+  <li>Cable USB para conectar Arduino al computador</li>
+  <li>Computador con plataforma Tinkercad</li>
+</ul>
+    </div>
+  <h3>PROCEDIMIENTO</h3>
+ <h1>Código usado en la práctica con bucle while y for</h1>
+<p>
+    <table border="1">
+// C++ code<br>
+//<br>
+int leds[] = {9, 8, 7, 6, 5, 4, 3};  // Arreglo con los pines de los 7 LEDs<br>
+
+void setup()<br>
+{<br>
+  for (int i = 0; i < 7; i++) {<br>
+    pinMode(leds[i], OUTPUT);<br>
+  }<br>
+}<br>
+
+void loop()<br>
+{<br>
+  for (int i = 0; i < 7; i++) {<br>
+    digitalWrite(leds[i], HIGH);<br>
+    delay(1000);<br>
+    digitalWrite(leds[i], LOW);<br>
+    delay(1000);<br>
+  }<br>
+}<br>
+</table>
+
+</p>
+<h3>ANÁLISIS Y DISCUSIÓN</h3>
+  <h2>Preguntas y Respuestas sobre la Práctica</h2>
+<ol>
+  <li>
+    <strong>¿Qué función cumple el bucle <code>for</code> en esta práctica?</strong><br>
+    Permite recorrer los pines de salida para encender los LEDs de forma secuencial.
+  </li>
+  <li>
+    <strong>¿Para qué se utiliza el bucle <code>while</code> en Arduino?</strong><br>
+    Para repetir una acción mientras se cumpla una condición lógica, útil para ciclos personalizados.
+  </li>
+  <li>
+    <strong>¿Cuántas veces se ejecuta la función <code>setup()</code>?</strong><br>
+    Solo una vez, al iniciar o reiniciar el programa cargado en el Arduino.
+  </li>
+  <li>
+    <strong>¿Qué hace la función <code>pinMode()</code>?</strong><br>
+    Configura el modo de un pin, ya sea como entrada (<code>INPUT</code>) o salida (<code>OUTPUT</code>).
+  </li>
+  <li>
+    <strong>¿Qué componente limita el paso de corriente hacia los LEDs?</strong><br>
+    Las resistencias, generalmente de 220 ohm, protegen a los LEDs del exceso de corriente.
+  </li>
+  <li>
+    <strong>¿Por qué usamos un arreglo para los pines de los LEDs?</strong><br>
+    Para recorrerlos fácilmente con bucles y evitar escribir código repetitivo.
+  </li>
+  <li>
+    <strong>¿Cuál es la diferencia principal entre <code>for</code> y <code>while</code>?</strong><br>
+    <code>for</code> es ideal para repeticiones conocidas; <code>while</code> para repeticiones basadas en condiciones.
+  </li>
+  <li>
+    <strong>¿Qué sucede si olvidamos usar <code>delay()</code> entre los encendidos?</strong><br>
+    Los LEDs se encenderían y apagarían tan rápido que parecería que no están funcionando correctamente.
+  </li>
+</ol>
+   
+    <div class="seccion">
+        <h2>📝 Conclusiones de la Práctica</h2>
+        <p>
+1. La utilización de bucles como <code>for</code> y <code>while</code> en Arduino permite optimizar el código, reduciendo la repetición innecesaria de instrucciones y facilitando el control de múltiples componentes como los LEDs.
+</p>
+
+<p>
+2. Comprender el funcionamiento de <code>void setup()</code> y <code>void loop()</code> es fundamental para estructurar correctamente un programa en Arduino, ya que permiten inicializar componentes y mantener una ejecución continua del proyecto.
+</p>
+
+<p>
+3. La práctica de encender 7 LEDs en secuencia ayuda a afianzar los conceptos básicos de programación estructurada y electrónica digital, promoviendo el pensamiento lógico y la resolución de problemas.
+</p>
+
+<p>
+4. El uso de resistencias, conexiones adecuadas y buenas prácticas en la codificación garantiza el correcto funcionamiento del circuito y previene daños en los componentes electrónicos como los LEDs o la placa Arduino.
+</p>
+    </div>
+<h3>ANEXOS</h3>
+    <h2><strong> Capturas de pantalla del simulador</strong> </h2>
+    <h3>7 leds encendidos con el bucle for y while</h3>
+<div class="contenedor-imagenes">
+        <figure>
+            <img src="https://i.postimg.cc/PxrWZDSx/simu111.png"width="600">
+        <figcaption>Figura 1: Encedido de leds</figcaption>
+        </figure>
+</div>
+<div class="contenedor-imagenes">
+        <figure>
+            <img src="https://i.postimg.cc/y6Gmgkc1/simu5555.png"width="600">
+        <figcaption>Figura 2: Encedido de leds</figcaption>
+        </figure>
+</div>
+    <h2><strong> Esquemas de conexión en Tinkercad</strong><a href="https://www.tinkercad.com/things/2K7l1K92ldI-cool-wolt-lahdi/editel?returnTo=https%3A%2F%2Fwww.tinkercad.com%2Fdashboard">Dar click aquí</a> </h2>
+  <h3>Esquemático de conexiones de los 7leds</h3>
+    <img src="https://i.postimg.cc/2ykK13ZF/esquematico123.png"width="1000">
+
+
+    <h2>Simulación de Thinkercad</h2>
+  
+    <iframe width="725" height="453" src="https://www.tinkercad.com/embed/2K7l1K92ldI?editbtn=1" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+</body>
+</html>
